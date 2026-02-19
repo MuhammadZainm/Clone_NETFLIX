@@ -250,8 +250,7 @@ Kids profiles come with PIN-protected parental controls that let you restrict th
         </footer>
  <script>
   const mq1 = window.matchMedia("(max-width: 768px)");
-const mq4 = window.matchMedia("(min-width: 768px) and (max-width: 1280px)");
-const mq5 = window.matchMedia("(min-width: 1281px)");
+const mq4 = window.matchMedia("(min-width: 768px)")
  
 
 
@@ -290,38 +289,14 @@ const next = document.querySelector('.next');
 let index = 0;
 
 next.addEventListener('click', () => {
-  if (index < 1) { // total - visible
+  if (index < 2) { // total - visible
     index++;
     track.style.transform = `translateX(-${index * 110}%)`;
   }
 });
 
 prev.addEventListener('click', () => {
-  if (index > 0) {
-    index--;
-    track.style.transform = `translateX(-${index * 45}%)`;
-  }
-});
-
-  }
-   else if (mq5.matches) {
-    console.log("📱 Small screen: 0 - 768px");
-    // your JS for this range
-     const track = document.querySelector('.carousel-track');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-let index = 0;
-
-next.addEventListener('click', () => {
-  if (index < 1) { // total - visible
-    index++;
-    track.style.transform = `translateX(-${index * 45}%)`;
-  }
-});
-
-prev.addEventListener('click', () => {
-  if (index > 0) {
+  if (index > 1) {
     index--;
     track.style.transform = `translateX(-${index * 45}%)`;
   }
@@ -334,7 +309,7 @@ prev.addEventListener('click', () => {
 handleScreenChange();
 
 // Add event listeners to react on resize
-[mq1, mq4, mq5].forEach(mq => {
+[mq1, mq4].forEach(mq => {
   mq.addEventListener("change", handleScreenChange);
 });
 
@@ -342,5 +317,6 @@ handleScreenChange();
 </body>
 
 </html>
+
 
 
