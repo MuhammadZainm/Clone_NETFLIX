@@ -289,14 +289,14 @@ const next = document.querySelector('.next');
 let index = 0;
 
 next.addEventListener('click', () => {
-  if (index < 2) { // total - visible
+  if (index < 1) { // total - visible
     index++;
     track.style.transform = `translateX(-${index * 110}%)`;
   }
 });
 
 prev.addEventListener('click', () => {
-  if (index > 1) {
+  if (index > 0) {
     index--;
     track.style.transform = `translateX(-${index * 45}%)`;
   }
@@ -317,6 +317,7 @@ handleScreenChange();
 </body>
 
 </html>
+
 
 
 
